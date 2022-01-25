@@ -1,5 +1,4 @@
 import math
-import random
 
 max = 200
 min = 0
