@@ -10,6 +10,7 @@
 # [0:4:1] = exibe começando da primeira letra, ate a quarta, de um em um
 # .split = separa as palavras da frase
 # .join(variavel) = juntou as palavras separadas
+# .replace('','')
 
 '''
 exercicio Palindrome sem For
