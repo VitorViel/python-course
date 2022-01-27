@@ -44,5 +44,9 @@ nome = nome.split();
 
 for i in range(0, len(nome)):
   print(nome[i])
+  
+for c in range (6, 0, -1) ao contrario
+
+for c in range (0, 6, 2) de 2 em dois
 '''
 
