@@ -3,6 +3,9 @@ import random
 from random import choice
 from random import randint
 from time import sleep
+
+from datetime import date
+variavel = date.today().year
 #dorme por 1 segundo
 sleep(1)
 
