@@ -1,4 +1,5 @@
 import random
+
 ''' Exercicio de fatorial 60
 n = int(input('Digite um numero para ver o seu fatorial\n-> '))
 c = n
