@@ -49,3 +49,17 @@ for c in range(0,len(a)):
 print(f'O menor numero foi {max(a)}')
 print(f'O maior numero foi {min(a)}')
 '''
+
+'''Exercicio 75 tupla mostrar quantas vzs nmr foi digitado
+l = (int(input('digite o 1\n-> ')),int(input('digite o 2\n-> ')),int(input('digite o 3\n-> ')),int(input('digite o 4\n-> ')))  
+print(f'O nove apareceu {l.count(9)} vezes')
+if 3 in l:
+    print(f'O tres apareceu na {l.index(3) + 1}° posicao')
+else:
+    print('O tres nao apareceu')
+    
+print('os números pares foram\n-> ', end='')
+for c in l:
+    if c % 2 == 0:
+        print(c, end=' ')
+'''
