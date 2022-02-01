@@ -14,17 +14,13 @@ print(f'{f}', end = '')
 
 ''' Exercicio tabuada condição parada 67
 n = 0
-
 while True:
     n = int(input('Digite um número para ver a tabuada\n-> '))
-
     if n < 0:
         break
-
     for c in range (1,11):
         print(f'{n} x {c} = {c*n}')
         c -= 1
-
 print(f'Você decidiu parar... ')
 '''
 
@@ -48,7 +44,6 @@ while True:
         else:
             print('Ganhei!! Máquina > humanos rsrs')
             break
-
 print(f"O seu número de vitórias foi {contador_vitorias} vez(es)")
 '''
 
@@ -100,7 +95,6 @@ while True:
         continuar = str(input('Deseja continuar?')).upper()
     if continuar == 'N':
         break
-
 print(f'Você decidiu parar...\nO total de sua compra é de R${preco_total}\n{conta_preco} produtos custam mais de R$1000\n{nome_mais_caro} é o nome do produto mais barato')
 '''
 
@@ -111,19 +105,15 @@ while True:
     print('#' * 30)
     dinheiro = int(input('Digite o valor que gostaria de sacar\n-> '))
     print('Você deverá sacar...')
-
     descontado = dinheiro//50
     print(f'{descontado} cédulas de 50')
     dinheiro = dinheiro - descontado*50
-
     descontado = dinheiro//20
     print(f'{descontado} cédulas de 20')
     dinheiro = dinheiro - descontado*20
-
     descontado = dinheiro//10
     print(f'{descontado} cédulas de 10')
     dinheiro = dinheiro - descontado*10
-
     descontado = dinheiro//1
     print(f'{descontado} cédulas de 1')
     dinheiro = dinheiro - descontado*1
@@ -134,7 +124,3 @@ while True:
         break
 print('Falou XD')
 '''
-
-
-
-
