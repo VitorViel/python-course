@@ -21,6 +21,38 @@ print(f'O maior número digitado foi {maior} na posicao {pos_maior + 1}')
 print(f'O menor número digitado foi {menor} na posicao {pos_menor + 1}')
 '''
 
+'''78 AINDA
+lista = []
+maior = menor = 0
+for c in range(0,5):
+    lista.append(int(input(f'Digite um número na posiçaõ {c}\n-> ')))
+    if c == 0:
+        maior = menor = lista[c]
+    else:
+        if lista[c] > maior:
+            maior = lista[c]
+        elif lista[c] < menor:
+            menor = lista[c]
+
+print(f'Os numeros digitados foram {lista}')
+print(f'O maior número foi {maior} na(s) posição(ões) ', end='')
+
+for c,v in enumerate(lista):
+    if v == maior:
+        print(f'{c + 1}...', end='')
+print()
+print(f'O menor número foi {menor} na(s) posição(ões) ', end='')
+
+for c,v in enumerate(lista):
+    if v == menor:
+        print(f'{c + 1}...', end='')
+'''
+'''
+OOOOOOOOOOOOOOOOOUUUUUUUUUUU
+print(f'O maior número digitado foi {max(lista)} na posição {lista.index(max(lista)) + 1}\nE o menor foi {min(lista)} na posiçao {lista.index(min(lista)) + 1}')
+'''
+
+
 '''Exercicio 79 add num nas listas e n pode ter igual la dentro
 l = []
 while True:
@@ -37,6 +69,27 @@ while True:
 
 print(f'Voce digitou os valores {l.sort()}')
 '''
+
+'''Exercicio 80 tenso de organizar sem o sort()
+list = []
+for c in range (0,5):
+    novo = int(input('Digite o número a ser adicionado\n-> '))
+    if c == 0  or novo > list[-1]:
+        list.append(novo)
+        print(f'Numero {novo} adicionado ao final da fila')
+    else:
+        pos = 0
+        while pos < len(list):
+            if novo < list[pos]:
+                list.insert(pos, novo)
+                print(f'Numero {novo} adicionado com sucesso na posoção {pos}°')
+                break
+            pos += 1
+print('=-' * 30)
+print(f'Os valores digitados em ordem sem o sort ficaram {list}')
+print('=-' * 30)
+'''
+
 
 '''Exercicio 81 lista com maior menor, e a posicao 5
 l = []
@@ -64,6 +117,7 @@ else:
     print('O valor 5 não esteve presente')
 '''
 
+
 '''Exercicio 82 listas com pares e impares
 lista = []
 lista_pares = []
@@ -85,6 +139,7 @@ print(f'A lista total é\n-> {lista}')
 print(f'A lista de pares é\n-> {lista_pares}')
 print(f'A lista de impares é\n-> {lista_impares}')
 '''
+
 
 '''Exercicio 83 verificar se a expressão está correta
 exp = str(input('Digite a expressão a ser verificada\n-> '))
