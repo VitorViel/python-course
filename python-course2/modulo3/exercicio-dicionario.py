@@ -67,28 +67,55 @@ for k,v in usuario.items():
     print(f'{k} = {v}')
 '''
 
-'''Exercicio 93 aproveitamento com jogadores
-jogador = {}
-partidas = []
-jogador['nome'] = str(input('Nome do jogador: '))
-qtd_partidas = int(input(f'Quantas partidas o jogador {jogador["nome"]} jogou?: '))
-total_gols = 0
+'''Exercicio 93 aproveitamento com jogadores'''
 
-for c in range (0,qtd_partidas):
-  partidas.append(int(input(f'Quantos gols na {c + 1}° partida?: ')))
-  total_gols += 1
-jogador['gols'] = partidas[:]
-jogador['total'] = sum(jogador['gols'])
-print('Calculando valores...')
-sleep(1)
 
-for i, v in jogador.items():
-  print(f'{i} = {v}')
+'''Exercicio 94 acima da media de idade do grupo
+galera = []
+pessoa = {}
+soma = media = 0
+while True:
+  pessoa.clear()
+  pessoa['nome'] = str(input('Digite o nome: '))
+  pessoa['sexo'] = str(input('Digite o sexo [M/F]: ')).upper()
+  if pessoa['sexo'] not in 'MF':
+    while True:
+      print('Erro! Digite um sexo válido [M/F] ')
+      pessoa['sexo'] = str(input('Digite o sexo [M/F]: ')).upper()
+      if pessoa['sexo'] in 'MF':
+        break
+  pessoa['idade'] = int(input('Digite a idade: '))
+  soma += pessoa['idade']
+  galera.append(pessoa.copy())
+  print('Usuário adicionado.')
   
-print(f'      O jogador {jogador["nome"]} jogou {qtd_partidas} partidas...')
-print('=============================================')
-for i, v in enumerate(jogador['gols']):
-  print(f'      Na {i+1} partida o {jogador["nome"]} fez {v} gols')
-print(f'      Foi um total de {jogador["total"]} gols!')
-print('=============================================')
+  continuar = ' '
+  while True:
+    continuar = str(input('Deseja continuar? [S/N]\n-> ')).upper()
+    if continuar not in 'SN':
+      print('Erro! Digite apenas S para Sim e N para não!')
+    else:
+      break
+  if continuar == 'N':
+    break
+  
+media = soma//len(galera)
+print('*' * 30)
+
+print(f'{len(galera)} pessoas foram cadastradas.')
+print(f'A média das idades é {media}')
+print(f'As mulheres cadastradas foram ', end = '')
+for p in galera:
+  if p['sexo'] == 'F':
+    print(f'{p["nome"]}...', end = '')
+print()
+
+print('A lista de pessoas com idade acima da média é ', end = '')
+for p in galera:
+  if p['idade'] >= media:
+    print(f'{p["nome"]}...', end = '')
+    
+print('*' * 30)
 '''
+    
+
