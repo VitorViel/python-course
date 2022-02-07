@@ -118,4 +118,82 @@ for p in galera:
 print('*' * 30)
 '''
     
+'''
+jogador = {}
+aproveitamento = []
+
+jogador['nome'] = str(input('Digite o nome do jogador: '))
+qtd_part = int(input(f'Quantas partidas {jogador["nome"]} jogou?: '))
+
+for c in range (0,qtd_part):
+  aproveitamento.append(int(input(f'Quantos gols no {c + 1}° jogo?: ')))
+  jogador['gols'] = aproveitamento.copy()
+
+print(aproveitamento)
+print(jogador)
+
+print(f'Analisando dados do jogador {jogador["nome"]}...')
+total = sum(jogador['gols'])
+sleep(1)
+print('#' * 30)
+for k,v in jogador.items():
+  print(f'{k} = {v}')
+print(f'Quantidade de partidas = {qtd_part}')
+print(f'Total de gols = {total}')
+print('#' * 30)
+
+print('=-' * 30)
+for c in range(0,qtd_part):
+  print(f'Na {c + 1}° partida, fez {jogador["gols"][c]}')    
+print('=-' * 30)
+'''
+
+jogador = {}
+aproveitamento = []
+jogadores = []
+
+while True:
+  jogador.clear()
+  jogador['nome'] = str(input('Digite o nome do seu jogador: '))
+  qtd_partida = int(input(f'Quantas partidas {jogador["nome"]} jogou?: '))
+
+  aproveitamento.clear()
+
+  for c in range (0,qtd_partida):
+    aproveitamento.append(int(input(f'Quantos gols na {c + 1} partida?: ')))
+  jogador['gols'] = aproveitamento.copy()
+  
+  print('Jogador adicionado!')
+
+  jogadores.append(jogador.copy())
+
+  continuar = str(input('Deseja continuar? [S-N]: ')).upper()
+  if continuar == 'N':
+    break
+
+print(jogadores)
+
+print('=-' * 30)
+print('COD', end='')
+for k in jogador.keys():
+  print(f'  {k}  ', end='')
+print()
+
+for k,v in enumerate(jogadores):
+  print(f'{k}   ', end='')
+  for d in v.values():
+    print(f' {d}  ',end='')
+  print()
+print('=-' * 30)
+
+while True:
+  cod = int(input('Digite o código [COD] do jogador que deseja inspecionar: ("999" cancela)\n-> '))
+  if cod == 999 or cod >= len(jogadores):
+    print('GG')
+    break
+  print(f'Analisando dados do jogador {jogadores[cod]["nome"]}...')
+  sleep(1)
+  for c, g in enumerate(jogadores[cod]['gols']):
+    print(f'No {c + 1}° jogo fez {g} gols...')
+  print(f'Tendo um total de {sum(jogadores[cod]["gols"])} gols')
 
