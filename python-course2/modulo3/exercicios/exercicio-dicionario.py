@@ -148,6 +148,7 @@ for c in range(0,qtd_part):
 print('=-' * 30)
 '''
 
+'''Aprimoramento do exercicio de futebol
 jogador = {}
 aproveitamento = []
 jogadores = []
@@ -196,4 +197,4 @@ while True:
   for c, g in enumerate(jogadores[cod]['gols']):
     print(f'No {c + 1}° jogo fez {g} gols...')
   print(f'Tendo um total de {sum(jogadores[cod]["gols"])} gols')
-
+'''
