@@ -121,7 +121,7 @@ print(atualiza)
 print(voto(1945))
 '''
 
-'''102 fatorial com conta ou n'''
+'''102 fatorial com conta ou n
 def fatora(num, show = False):
     """[summary]
 
@@ -144,6 +144,89 @@ def fatora(num, show = False):
     return i
 
 print(fatora(6, show=True))
+'''
+
+'''103 ficha com jogadores
+def ficha(nome="Desconhecido",gols=0):
+    return f'O jogador {nome} fez {gols} gols...'
+
+nome = str(input('Digite o nome do jogador\n-> '))
+if nome.strip() == '':
+    nome = '<desconhecido>'
+
+gols = str(input('Digite quantidade de gol(s)\n-> '))
+
+if gols.isnumeric():
+    gols = int(gols)
+if gols == '':
+    gols = 0
+
+print(ficha(nome,gols))
+'''
 
 
+'''104 leiaint so vai se for um valor inteiro
+def leiaint(msg):
+    if msg.isnumeric():
+        ok = False
+    while True:
+        v = str(input(msg))
+        if v.isnumeric():
+            break
+        else:
+            print('\033[0;31mERRO! (digite um valor inteiro de int)!\033[m')                 
+msg = leiaint('Digite um número: ')
+print(f'Ok! Você digitou um valor de número do tipo int!')
+'''
 
+'''105 numero com notas dos alunos
+def notas(*num, sit = False ):
+    """notas é um método que gerencia as notas de uma turma, gerando sua nota mais alta, a mais baixa, a média, e a situação[boa, razoavel ou ruim]
+
+    Args:
+        * num = recebe as notas (sem limite de quantidade de notas necessárias, fica a critério do usuário)
+        sit (bool, optional): gera o booleano se o usuário deseja ver a situação ou não. Defaults to False.
+    """
+    soma_num = 0
+    maior = menor = 0
+    dic = {}
+    qtd_num = len(num)
+    
+    for c in range (0,len(num)):
+        if c == 0:
+            maior = num[c]
+            menor = num[c]
+        else:                                      
+            if num[c] > maior:
+                maior = num[c]                  
+            if num[c] < menor:             #<== Dessa forma, Ou
+                menor = num[c]                          
+            soma_num += num[c]
+    media = soma_num / qtd_num
+    
+    
+    dic['maior'] = max(num)
+    dic['menor'] = min(num)                        # Dessa
+    dic['media'] = sum(num) / len(num)                 
+    dic['total'] = len(num)
+    
+    
+    dic['maior'] = maior
+    dic['menor'] = menor
+    dic['media'] = media
+    dic['soma_num'] = soma_num
+    dic['qtd_num'] = qtd_num
+    
+    if sit:
+        if media > 4 and media < 6:
+            dic['sit'] = 'A média é razoável'
+        elif media > 6:
+            dic['sit'] = 'A média é boa'
+        else:
+            dic['sit'] = 'A média é ruim'
+    
+    print(dic)
+
+notas(10,7,6,9,10, sit = True)
+help(notas)
+'''
