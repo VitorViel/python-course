@@ -1,4 +1,6 @@
 from time import sleep
+from random import randint
+from datetime import date
 
 def mostraLinha():
     print('-' * 30)
@@ -62,7 +64,7 @@ p = int(input('-> '))
 contador(i, f, p)
 '''
 
-'''Exercicio 99 funcao maior()'''
+'''Exercicio 99 funcao maior()
 lista = []
 def maior(lista):
     maior_num = 0
@@ -81,6 +83,67 @@ while True:
         break
 
 maior(lista)
+'''
+
+'''100 sorteador de numeros e soma de pares
+numeros = []
+
+def sorteia(numeros):
+    for c in range (0,6):
+        numeros.append(randint(1,60))
+    print(numeros)
+
+def somaPar(numeros):
+    somaPar = 0
+    for c in range (0,len(numeros)):
+        if numeros[c] % 2 == 0:
+            somaPar += numeros[c]
+    print(somaPar)
+
+sorteia(numeros)
+somaPar(numeros)
+'''
+
+'''101 votos obrigatorios ou n
+atualiza = date.today()
+def voto(anonasc):
+    atual = date.today().year 
+    ano = atual - anonasc
+    print(f'Você tem {ano} anos...', end=' ')
+    if ano >= 18 and ano <= 65:
+        return f'Voto obrigatório'
+    elif 18 > ano > 15 or ano >= 65:
+        return f'Voto opcional'
+    elif ano < 16:
+        return f'Não vota'
+
+print(atualiza)
+print(voto(1945))
+'''
+
+'''102 fatorial com conta ou n'''
+def fatora(num, show = False):
+    """[summary]
+
+    Args:
+        num ([type]): [numero a ser fatorado]
+        show (bool, optional): [retorna True ou False para mostrar ou não a conta]. Defaults to False.
+
+    Returns:
+        [i]: [valor do fatorial]
+    """
+    i = 1
+    for c in range(num,0,-1):
+        if show == True:
+            print(c,end='')
+            if c == 1:
+                print(f' = ', end='')
+            else:
+                print(f' x ', end='')
+        i *= c
+    return i
+
+print(fatora(6, show=True))
 
 
 
