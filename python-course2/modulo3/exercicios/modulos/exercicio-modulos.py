@@ -1,4 +1,4 @@
-import uteis
+from uteis import uteis
 
 
 preco = float(input('Digite o preço a ser cotado: R$ '))
